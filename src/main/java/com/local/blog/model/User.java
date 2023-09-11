@@ -28,7 +28,7 @@ public class User {
      */
     private int id; // 오라클:시퀀스, MySQL:auto_increment
 
-    @Column(nullable = false, length = 30, unique = true)
+    @Column(unique = true, nullable = false, length = 30)
     private String username; // 아이디
 
     @Column(nullable = false, length = 100) // 12345 -> 해쉬(비밀번호 암호화)

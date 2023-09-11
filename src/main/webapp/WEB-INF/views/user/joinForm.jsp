@@ -28,5 +28,5 @@
 
 </div>
 <%-- /는 static을 찾아감, user.js 파일을 참조--%>
-<script src="/blog/js/user.js"></script>
+<script src="/js/user.js"></script>
 <%@ include file="../layout/footer.jsp" %>
