@@ -12,6 +12,10 @@ import java.util.Collection;
 public class PrincipalDetail implements UserDetails {
     private User user; // 콤포지션
 
+    public PrincipalDetail(User user) {
+        this.user = user;
+    }
+
     @Override
     public String getPassword() {
         return user.getPassword();
@@ -25,7 +29,7 @@ public class PrincipalDetail implements UserDetails {
     // 계정이 만료되지 않았는지 리턴한다 (true : 만료안됨)
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     // 계정이 잠겨있지 않았는지 리턴한다 (true : 잠기지않음)
