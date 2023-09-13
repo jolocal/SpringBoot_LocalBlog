@@ -1,12 +1,15 @@
 package com.local.blog.config.auth;
 
 import com.local.blog.model.User;
+import lombok.Data;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
+@Getter
 // 스프링 시큐리티가 로그인 요청을 가로채서 로그인을 진행하고 완료가 되면 UserDetails 타입의 오브젝트를
 // 스프링 시큐리티의 고유한 세션 저장소에 저장을 해준다. (UserDetails 타입의 principalDetail)
 public class PrincipalDetail implements UserDetails {
@@ -61,9 +64,11 @@ public class PrincipalDetail implements UserDetails {
         return collectors;
     }
 }
-/*        collectors.add(new GrantedAuthority() {
+    /*
+            collectors.add(new GrantedAuthority() {
             @Override
             public String getAuthority() {
                 return "ROLE_"+user.getRole(); // ROLE_USER(스프링규칙) / USER(X)
             }
-        });*/
+        })
+      */
