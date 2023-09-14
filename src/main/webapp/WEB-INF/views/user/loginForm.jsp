@@ -4,7 +4,7 @@
 
 <div class="container">
 
-    <form action="/auth/loginProc", method="POST">
+    <form action="/auth/loginProc" , method="POST">
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
             <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp">
@@ -16,6 +16,8 @@
         </div>
 
         <button id="btn-login" class="btn btn-primary">로그인</button>
+        <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=c61f08f62473c3801b979b56fa3028de&redirect_uri=http://localhost:8000/auth/kakao/callback"><img
+                height="38px" src="/image/kakao_login_button.png"></a>
     </form>
 
 </div>

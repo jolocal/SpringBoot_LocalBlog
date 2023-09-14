@@ -28,11 +28,13 @@ public class User {
      */
     private int id; // 오라클:시퀀스, MySQL:auto_increment
 
-    @Column(unique = true, nullable = false, length = 30)
+    @Column(unique = true, nullable = false, length = 100)
     private String username; // 아이디
 
     @Column(nullable = false, length = 100) // 12345 -> 해쉬(비밀번호 암호화)
     private String password;
+
+    private String oauth; // kakao, google (null 허용)
 
     @Column(nullable = false, length = 50)
     private String email;
