@@ -1,6 +1,8 @@
 package com.local.blog.api;
 
 import com.local.blog.dto.ResponseDto;
+import com.local.blog.dto.SignupDto;
+import com.local.blog.handler.CustomValidationException;
 import com.local.blog.model.User;
 import com.local.blog.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -10,10 +12,16 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @Slf4j
@@ -25,11 +33,21 @@ public class UserApiController {
     private AuthenticationManager authenticationManager;
 
     @PostMapping("/auth/joinProc")
-    public ResponseDto<Integer> save(@RequestBody User user){ // username, password, email
-        log.info("UserApiController : save호출됨");
-        // 실제로 DB에 insert를 하고 아래에서 return이 되면 되요.
-        userService.회원가입(user);
-        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); // 자바오브젝트를 json으로 변환해서 리턴(Jackson)
+    public ResponseDto<Integer> save(@RequestBody @Valid SignupDto respDto, BindingResult bindingResult){ // username, password, email
+        log.info("singupRespDto : {}",respDto);
+        if (bindingResult.hasErrors()){
+            Map<String,String> errorMap = new HashMap<>();
+            for (FieldError error: bindingResult.getFieldErrors()){
+                errorMap.put(error.getField(),error.getDefaultMessage());
+                log.info("error: {}" , error.getField());
+                log.info("getDefaultMessage: {}" , error.getDefaultMessage());
+            }
+            throw new CustomValidationException(HttpStatus.INTERNAL_SERVER_ERROR.value(),"유효성검사에 실패했습니다",errorMap);
+        } else {
+            User user = respDto.toEntity();
+            userService.회원가입(user);
+            return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); // 자바오브젝트를 json으로 변환해서 리턴(Jackson)
+        }
     }
 
     @PutMapping("/user")

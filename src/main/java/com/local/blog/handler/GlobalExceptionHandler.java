@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @ControllerAdvice
 @RestController
 public class GlobalExceptionHandler {
@@ -14,8 +16,9 @@ public class GlobalExceptionHandler {
         return new ResponseDto<String>(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage());
     } //500
 
-   /* @ExceptionHandler(value = IllegalArgumentException.class)
-    public String handleArgumentException(IllegalArgumentException e){
-        return "<h1>"+e.getMessage()+"</h1>";
-    }*/
+    @ExceptionHandler(value = CustomValidationException.class)
+    public ResponseDto<Map<String,String>> validationException(CustomValidationException e){
+        return new ResponseDto<>(HttpStatus.INTERNAL_SERVER_ERROR.value(), e.getMessage(),e.getErrorMap());
+    }
+
 }

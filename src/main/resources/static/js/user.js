@@ -30,7 +30,14 @@ let index = {
         }).done(function (resp){
             console.log("resp: ",resp);
             if (resp.status == 500){
-                alert("회원가입에 실패하였습니다.");
+                // errorMessage 저장용도로 사용
+                let errorMessages = "회원가입에 실패하였습니다. \n"
+                // for...in ( 객체 내의 각 필드(속성)을 순회하면서 field 변수에 저장하고, 해당 필드 값을 가져옴
+                for (let field in resp.data){
+                    errorMessages += `${field}: ${resp.data[field]}\n`;
+                }
+                alert(errorMessages);
+                history.back();
             } else {
                 alert("회원가입이 완료되었습니다.");
                 location.href="/";
