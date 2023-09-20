@@ -26,10 +26,10 @@ public class BoardService {
     private ReplyRepository replyRepository;
 
     @Transactional
-    public void 글쓰기(Board board, User user) { //title, content
+    public Board 글쓰기(Board board, User user) { //title, content
         board.setCount(0); // 조회수
         board.setUser(user); // 작성자
-        boardRepository.save(board);
+        return boardRepository.save(board);
     }
 
     //    public List<Board> 글목록(Pageable pageable) {
