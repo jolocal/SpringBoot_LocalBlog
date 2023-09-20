@@ -1,5 +1,6 @@
 package com.local.blog.service;
 
+import com.local.blog.handler.CustomValidationException;
 import com.local.blog.model.RoleType;
 import com.local.blog.model.User;
 import com.local.blog.repository.UserRepository;
@@ -36,7 +37,7 @@ public class UserService {
 
         // 영속화
         User userEntity = userRepository.findById(id).orElseThrow(() ->
-            new IllegalArgumentException("회원 찾기 실패")
+            new CustomValidationException("찾을 수 없는 Id입니다.")
         );
 
         // 영속화 오브젝트 수정
