@@ -8,15 +8,16 @@
 
 
 ## :low_brightness: 개발 환경
-- **Language** : <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> 
+- **Language** : `Java`
 - **Framework** : `Spring Boot (2.x)`
 - **Template Engine** : `JSP`
 - **Authorization** : `Spring Security`
-- **ORM** : `Spring Data JPA`, `Querydsl`
+- **ORM** : `Spring Data JPA`
 - **Database** : `MySQL`
 - **IDE** : `IntelliJ`
 - **API Test** : `Postman`
-
+- **Version Control** : `GitHub`
+- **UI Framework** : `Bootstrap`
 
 ## :mag_right: 사용 기술
 
