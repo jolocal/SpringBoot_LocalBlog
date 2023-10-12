@@ -39,7 +39,7 @@
 <details>
 <summary> :video_camera: 시연 영상 보기</summary>
 <p align="center">
-  <img src="https://github.com/jolocal/SpringBoot_localgram/assets/129312146/0f2863b8-ae45-4400-b4eb-9ee27fa827f5">
+  <img src="https://github.com/jolocal/SpringBoot_LocalBlog/assets/129312146/ab3aeee6-383e-4eb8-bb29-06ba51186d7a">
 </p>
 </details>
 
