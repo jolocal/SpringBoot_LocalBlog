@@ -55,12 +55,11 @@
 <details>
 <summary> :video_camera: 시연 영상 보기</summary>
 <p align="center">
-  <img src="https://github.com/jolocal/SpringBoot_localgram/assets/129312146/d9e08b0d-e20a-4b4a-a47e-c8c5ddba531c">
+  <img src="https://github.com/jolocal/SpringBoot_LocalBlog/assets/129312146/f84cb4d4-024e-4e1a-ad8b-6ed03c3bc871">
 </p>
 </details>
 
 - 댓글 리스트 불러오기
 - 댓글 작성
-- 댓글 수정
 - 댓글 삭제
 
