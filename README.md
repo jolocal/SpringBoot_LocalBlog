@@ -21,9 +21,10 @@
 
 
 ## :pushpin: DB 설계
-[image](https://github.com/jolocal/SpringBoot_LocalBlog/assets/129312146/dfba2f2c-7e50-48c8-9ee6-21014710c55d)
 
-
+<p align="center">
+  <img src="https://github.com/jolocal/SpringBoot_LocalBlog/assets/129312146/dfba2f2c-7e50-48c8-9ee6-21014710c55d">
+</p>
 
 ## :pushpin: 주요 기능
 
