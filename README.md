@@ -22,7 +22,7 @@
 
 ## :pushpin: DB 설계
 
-<p align="center">
+<p align="left">
   <img src="https://github.com/jolocal/SpringBoot_LocalBlog/assets/129312146/842e4b98-4236-4c7e-94ba-b216b6701896">
 </p>
 
