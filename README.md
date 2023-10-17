@@ -4,7 +4,7 @@
 ## :pencil2: NOTION
 프로젝트 진행과정, 오류 해결 방법, 궁금한 점 등을 자세히 기록한 노션 페이지입니다.
 
-[NOTION 바로가기](https://codemichelin.notion.site/83bfdf81e7dd411881f3ab37a3e8a27f?v=1e7b082fe56f40d1af3ab8846e08ccdc&pvs=4)
+[NOTION 바로가기](https://codemichelin.notion.site/36b14f66661a43bab6b5474b04163673?v=3fcdca5dbc8547af9a6a493196670a9a&pvs=4)
 
 
 ## :low_brightness: 개발 환경
